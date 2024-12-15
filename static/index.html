@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Web App</title>
+</head>
+<body>
+    <h1>Welcome to the Python Web Application</h1>
+    <p>Data from backend API:</p>
+    <div id="data"></div>
+
+    <script>
+        fetch('/api/data')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('data').innerText = JSON.stringify(data, null, 2);
+            });
+    </script>
+</body>
+</html>
